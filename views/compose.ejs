@@ -1,0 +1,14 @@
+<%- include("./partials/header.ejs") -%>         <!-- both formats of path works -->
+
+<h1>Compose</h1>
+<form action="/compose" method="post">
+    <div class="inputLabel">Title</div>
+    <input class="inputText" name="inputText" type="text"><br>
+    
+    <div class="inputLabel">Post</div>
+    <textarea class="textArea" name="textArea"  rows="5"></textarea><br>
+    <button type="submit" name="button" class="formSubmitButton">Publish</button>
+</form>
+
+
+<%- include("partials/footer.ejs") -%>
