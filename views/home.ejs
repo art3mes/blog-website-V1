@@ -1,17 +1,15 @@
  <%- include("./partials/header.ejs") -%>         <!-- both formats of path works -->
 
-<h1>HOME</h1>
-<p><%= homeString %></p>
-
-<!-- for(let a=0;a<Object.keys(posts).length;a++){ %>
-    console.log(posts[a].title);  %>
- }   -->
-<%posts.forEach(function(post){ %>
-<h1><%= post.title  %></h1>
-<div class="contentContainer"> 
-    <p class="contentWrap"><%= post.content %>  </p> 
-    <a class="readMore" href="/posts/<%=post.title%>">Read More</a>  
-</div>    <!--  string truncated using CSS -->
-<% });  %>
+<div >
+    <h1>HOME</h1>
+    <p><%= homeString %></p>
+    <%posts.forEach(function(post){ %>
+    <h1><%= post.title  %></h1>
+    <div class="contentContainer"> 
+        <p class="contentWrap"><%= post.content %>  </p> 
+        <a class="readMore" href="/posts/<%=post.title%>">Read More</a>  
+    </div>    <!--  string truncated using CSS -->
+    <% });  %>
+</div>
 
 <%- include("partials/footer.ejs") -%>
