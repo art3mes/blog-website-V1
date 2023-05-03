@@ -29,8 +29,9 @@ body{
     list-style: none;
     color: purple;
 }
-.navbar-right  li a:hover {
+.navbar-right  li a:hover{
     color: #1abc9c !important;
+    border-color:  #1abc9c ;
 }
 
 .body-container{
@@ -92,4 +93,9 @@ body{
     display: flex;
     align-items: center;
     flex-direction: row;
+}
+
+.active{
+    border-bottom: 1px solid;
+    padding-bottom: 1px;
 }
