@@ -3,5 +3,61 @@
 <div class="footer">
   <p>Made with ❤️ by Evergarden</p>
 </div>
+<script>
+  let currentPage=window.location.pathname.split('/')[1];  //getting the url of the current webpage
+  headerColorBorder(currentPage);
+  //function headerColorBorder(name){
+    //   if(name===""){
+    //     $('#home a').addClass('active');
+    //     $('#compose a').removeClass('active');
+    //     $('#about a').removeClass('active');
+    //     $('#contact a').removeClass('active');
+    //   }
+    //   else if(name==="compose"){
+    //     $('#home a').removeClass('active');
+    //     $('#compose a').addClass('active');
+    //     $('#about a').removeClass('active');
+    //     $('#contact a').removeClass('active');
+    //   }
+    //   else if(name==="about"){
+    //     $('#home a').removeClass('active');
+    //     $('#compose a').removeClass('active');
+    //     $('#about a').addClass('active');
+    //     $('#contact a').removeClass('active');
+    //   }else if(name==="contact"){
+    //     $('#home a').removeClass('active');
+    //     $('#compose a').removeClass('active');
+    //     $('#about a').removeClass('active');
+    //     $('#contact a').addClass('active');
+    //   }
+    //   else{
+    //     $('#home a').removeClass('active');
+    //     $('#compose a').removeClass('active');
+    //     $('#about a').removeClass('active');
+    //     $('#contact a').removeClass('active');
+    //   }
+    // }
+    function headerColorBorder(name) {            //optimized code
+      // Remove 'active' class from all elements
+      $('#home a, #compose a, #about a, #contact a').removeClass('active');
+      
+      // Add 'active' class to the element with matching ID
+      switch (name) {
+        case "":
+          $('#home a').addClass('active');
+          break;
+        case "compose":
+          $('#compose a').addClass('active');
+          break;
+        case "about":
+          $('#about a').addClass('active');
+          break;
+        case "contact":
+          $('#contact a').addClass('active');
+          break;
+      }
+    }
+    
+</script>
 </body>
 </html>

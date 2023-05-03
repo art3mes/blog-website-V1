@@ -91,6 +91,7 @@ body{
 .active{
     border-bottom: 1px solid;
     padding-bottom: 1px;
+    color: #1abc9c !important;
 }
 .inputs{
     row-gap: 6px;
