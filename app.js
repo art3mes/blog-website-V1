@@ -4,6 +4,7 @@ const bodyParser = require("body-parser");
 const ejs = require("ejs");
 var _ = require('lodash');                           //LODASH
 const mongoose=require('mongoose');
+require('dotenv').config();
 
 
 const homeStartingContent = "Welcome to our blog! Here, we share informative and inspiring content on a variety of topics that matter to you. Whether you're looking for advice on personal growth, tips for a healthier lifestyle, or insights on the latest trends and innovations, we've got you covered. Our team of writers and experts are passionate about creating engaging and informative content that will help you navigate through life's challenges and find new opportunities for growth and success. So sit back, grab a cup of coffee, and enjoy our latest articles and insights.";
@@ -18,7 +19,9 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 app.use(express.static("public"));
 
-mongoose.connect('mongodb://127.0.0.1:27017/blogWebsiteDB');  
+mongoose.connect(process.env.DB_URL)
+.then(()=>console.log("DB connected"))
+.catch(err=>console.log(err));
 const composeSchema={
   title:String,
   bodyText:String
